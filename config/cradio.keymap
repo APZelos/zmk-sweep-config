@@ -42,7 +42,7 @@
                                           33 34>;
         };
 
-        td_rest: tap_dance_reset {
+        td_reset: tap_dance_reset {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RESET";
             #binding-cells = <0>;
