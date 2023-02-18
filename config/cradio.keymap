@@ -6,20 +6,64 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3) &lpht LGUI k1      &lpht LALT k2      &lpht LCTRL k3
+#define BRML(k1,k2,k3) &lpht LS(LGUI) k1  &lpht LS(LALT) k2  &lpht LS(LCTRL) k3
+
+#define HRMR(k1,k2,k3) &rpht RCTRL k1      &rpht RALT k2      &rpht RGUI k3
+#define BRMR(k1,k2,k3) &rpht RS(RCTRL) k1  &rpht RS(RALT) k2  &rpht RS(RGUI) k3
 
 / {
     behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
+        rpht: positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
+            label = "POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0  1  2  3  4
+                                          10 11 12 13 14
+                                          20 21 22 23 24
+                                                   30 31>;
+        };
+
+        lpht: positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5  6  7  8  9
+                                          15 16 17 18 19
+                                          25 26 27 28 29
+                                          33 34>;
+        };
+
+        td_rest: tap_dance_reset {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_RESET";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&none>, <&reset>;
+        };
+
+        td_bootloader: tap_dance_bootloader {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_BOOTLOADER";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&none>, <&bootloader>;
+        };
+
+        td_bt_clear: tap_dance_bluetooth_clear {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_BLUETOOTH_CLEAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&none>, <&none>, <&bt BT_CLR>;
         };
     };
 
@@ -39,45 +83,45 @@
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ; :     │
+            &kp A     HRML(S,      D,         F)        &kp G          &kp H     HRMR(J,      K,         L)        &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │  / ?     │
+            &kp Z     BRML(X,      C,         V)        &kp B          &kp N     BRMR(M,     COMMA,     DOT)       &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                           &kp LSHFT  &lt 2 SPACE    &lt 1 SPACE  &kp 1 RSHFT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        right_layer {
+        symbols_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
+        //│ TAB      │  @       │  {       │  }       │          │   │          │  `       │  \       │  _       │  DELETE  │
+            &kp TAB    &kp AT     &kp LBRC   &kp RBRC   &none          &none      &kp GRAVE  &kp BSLH   &kp UNDER  &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
-            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SEMI
+        //│ ESCAPE   │  #       │  (       │  )       │          │   │          │  '       │  |       │  &       │  $       │
+            &kp ESC   HRML(HASH,   KP_LPAR,   KP_RPAR)  &none          &none     HRMR(SQT,    PIPE,      AMPS)     &kp DLLR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
-           &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
+        //│          │  ^       │  [       │  ]       │          │   │          │  "       │  !       │  ~       │          │
+            &none     BRML(CARET,  LBKT,      RBKT)     &none          &none     BRMR(DQT,    EXCL,      TILDE)    &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        left_layer {
+        numbers_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+        //│          │  %       │  /       │  *       │          │   │          │  7       │  8       │  9       │  BSPC    │
+            &none      &kp PRCNT  &kp FSLH   &kp ASTRK  &none          &none      &kp N7     &kp N8     &kp N9     &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+        //│          │  -       │  +       │  =       │          │   │          │  4       │  5       │  6       │  ENTER   │
+            &none     HRML(MINUS,  PLUS,      EQUAL)    &none          &none     HRMR(N4,     N5,        N6)       &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+        //│          │          │          │  0       │          │   │          │  1       │  2       │  3       │          │
+            &none     BRML(&none, &none,      N0)       &none          &none     BRMR(N1,     N2,        N3)       &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -87,14 +131,14 @@
         tri_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-            &reset     &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans      &reset
+        //│BOOTLOADER│          │          │          │          │   │  HOME    │  PG DOWN │  PG UP   │  END     │  BT 1    │
+       &td_bootloader  &none      &none      &none      &none          &HOME      &PG_DN     &PG_UP     &END       &bt BT_SEL 0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│          │          │          │          │          │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          │
+            &none      &none      &none      &none      &none          &LEFT      &DOWN      &UP        &RIGHT     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+        //│  RESET   │          │          │          │          │   │          │          │          │          │ BT CLEAR │
+            &td_reset  &none      &none      &none      &none          &none      &none      &none      &none      &td_bt_clear
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
