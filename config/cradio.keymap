@@ -132,10 +132,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│BOOTLOADER│          │          │          │          │   │  HOME    │  PG DOWN │  PG UP   │  END     │  BT 1    │
-       &td_bootloader  &none      &none      &none      &none          &HOME      &PG_DN     &PG_UP     &END       &bt BT_SEL 0
+       &td_bootloader  &none      &none      &none      &none          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &bt BT_SEL 0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │          │
-            &none      &none      &none      &none      &none          &LEFT      &DOWN      &UP        &RIGHT     &none
+            &none      &none      &none      &none      &none          &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  RESET   │          │          │          │          │   │          │          │          │          │ BT CLEAR │
             &td_reset  &none      &none      &none      &none          &none      &none      &none      &none      &td_bt_clear
