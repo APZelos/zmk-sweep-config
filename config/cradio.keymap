@@ -101,7 +101,7 @@
             &kp TAB    &kp AT     &kp LBRC   &kp RBRC   &none          &none      &kp GRAVE  &kp BSLH   &kp UNDER  &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ ESCAPE   │  #       │  (       │  )       │          │   │          │  '       │  |       │  &       │  $       │
-            &kp ESC   HRML(HASH,   KP_LPAR,   KP_RPAR)  &none          &none     HRMR(SQT,    PIPE,      AMPS)     &kp DLLR
+            &kp ESC   HRML(HASH,   LPAR,      RPAR)     &none          &none     HRMR(SQT,    PIPE,      AMPS)     &kp DLLR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  ^       │  [       │  ]       │          │   │          │  "       │  !       │  ~       │          │
             &none     BRML(CARET,  LBKT,      RBKT)     &none          &none     BRMR(DQT,    EXCL,      TILDE)    &none
