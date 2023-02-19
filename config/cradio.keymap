@@ -5,6 +5,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define KP_SK(k1) &kp_sk k1 k1
+
 / {
     behaviors {
         kp_sk: behavior_kp_sk {
@@ -48,78 +50,78 @@
         combo_left_gui_alt_control {
             timeout-ms = <50>;
             key-positions = <0 1 2 3>;
-            bindings = <&kp_sk LG(LA(LCTRL))>;
+            bindings = <KP_SK(LG(LA(LCTRL)))>;
         };
 
         combo_left_gui_control {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
-            bindings = <&kp_sk LG(LCTRL)>;
+            bindings = <KP_SK(LG(LCTRL))>;
         };
 
         combo_left_gui {
             timeout-ms = <50>;
             key-positions = <1 2
                                  13>;
-            bindings = <&kp_sk LGUI>;
+            bindings = <KP_SK(LGUI)>;
         };
 
         combo_left_control {
             timeout-ms = <50>;
             key-positions = <11 12 13>;
-            bindings = <&kp_sk LCTRL>;
+            bindings = <KP_SK(LCTRL)>;
         };
 
         combo_left_alt {
             timeout-ms = <50>;
             key-positions = <11 12
                                    23>;
-            bindings = <&kp_sk LALT>;
+            bindings = <KP_SK(LALT)>;
         };
 
         combo_left_alt_control {
             timeout-ms = <50>;
             key-positions = <21 22 23>;
-            bindings = <&kp_sk LA(LCTRL)>;
+            bindings = <KP_SK(LA(LCTRL))>;
         };
 
         // RIGTH COMBOS
         combo_right_gui_alt_control {
             timeout-ms = <50>;
             key-positions = <6 7 8 9>;
-            bindings = <&kp_sk RG(RA(RCTRL))>;
+            bindings = <KP_SK(RG(RA(RCTRL)))>;
         };
 
         combo_right_gui_control {
             timeout-ms = <50>;
             key-positions = <6 7 8>;
-            bindings = <&kp_sk RG(RCTRL)>;
+            bindings = <KP_SK(RG(RCTRL))>;
         };
 
         combo_right_gui {
             timeout-ms = <50>;
             key-positions = <   7 8
                              16>;
-            bindings = <&kp_sk RGUI>;
+            bindings = <KP_SK(RGUI)>;
         };
 
         combo_right_control {
             timeout-ms = <50>;
             key-positions = <16 17 18>;
-            bindings = <&kp_sk RCTRL>;
+            bindings = <KP_SK(RCTRL)>;
         };
 
         combo_right_alt {
             timeout-ms = <50>;
             key-positions = <   17 18
                              26>;
-            bindings = <&kp_sk RALT>;
+            bindings = <KP_SK(RALT)>;
         };
 
         combo_right_alt_control {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
-            bindings = <&kp_sk RA(RCTRL)>;
+            bindings = <KP_SK(RA(RCTRL))>;
         };
     };
 
