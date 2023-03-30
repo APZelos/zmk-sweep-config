@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define KP_SK(k1) &kp_sk k1 k1
-#define COMBO_TIMEOUT_MS 35
+#define COMBO_TIMEOUT_MS 25
 
 / {
     behaviors {
