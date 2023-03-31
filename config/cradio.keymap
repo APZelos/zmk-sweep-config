@@ -71,7 +71,7 @@
             key-positions = <2 3>;
             bindings = <KP_SK(LG(LCTRL))>;
             slow-release;
-            global-quick-tap-ms = <COM>;
+            global-quick-tap-ms = <COMBO_GLOBAL_QUICK_TAP_MS>;
         };
 
         combo_left_control {
