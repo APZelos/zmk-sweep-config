@@ -42,14 +42,6 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -64,8 +56,8 @@
         //│  Q              │  J              │  V              │  D              │  K              │   │  X              │  H              │  , <            │  . >            │  / ?            │
             &kp Q             &kp J             &kp V             &kp D             &kp K                 &kp X             &kp H             &kp COMMA         &kp DOT           &kp FSLH
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
-        //                                                      │  SHIFT          │  SPACE          │   │  SPACE          │  SHIFT          │
-                                                                  &kp LSHFT         &lt 2 SPACE           &lt 1 SPACE       &kp RSHFT
+        //                                                      │  SHIFT          │  REPEAT         │   │  LAYER 1        │  SPACE          │
+                                                                  &sk LSHFT         &key_repeat           &sl 1             &kp SPACE
         //                                                      ╰─────────────────┴─────────────────╯   ╰─────────────────┴─────────────────╯
             >;
         };
@@ -82,8 +74,8 @@
         //│                 │  $              │  [              │  ]              │                 │   │                 │  "              │  !              │  ^              │                 │
             &none             &kp DLLR          &kp LBKT          &kp RBKT          &none                 &none             &kp DQT           &kp EXCL          &kp CARET         &none
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
-        //                                                      │  TRANSPARENT    │  TRANSPARENT    │   │  TRANSPARENT    │  TRANSPARENT    │
-                                                                  &trans            &trans                &trans            &trans
+        //                                                      │  TRANSPARENT    │  LAYER 2        │   │  LAYER 3        │  TRANSPARENT    │
+                                                                  &trans            &sl 2                 &sl 3             &trans
         //                                                      ╰─────────────────┴─────────────────╯   ╰─────────────────┴─────────────────╯
             >;
         };
