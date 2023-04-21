@@ -61,8 +61,8 @@
         //│  C              │  R              │  S              │  T              │  G              │   │  M              │  N              │  E              │  I              │  A              │
             &kp C             &hm LGUI R        &hm LALT S        &hm LCTRL T       &kp G                 &kp M             &hm RCTRL N       &hm RALT E        &hm RGUI I        &kp A
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│  Q              │  J              │  V              │  D              │  K              │   │  X              │  H              │  / ?            │  , <            │  . >            │
-            &kp Q             &kp J             &kp V             &kp D             &kp K                 &kp X             &kp H             &kp FSLH          &kp COMMA         &kp DOT
+        //│  Q              │  J              │  V              │  D              │  K              │   │  X              │  H              │  , <            │  . >            │  / ?            │
+            &kp Q             &kp J             &kp V             &kp D             &kp K                 &kp X             &kp H             &kp COMMA         &kp DOT           &kp FSLH
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
         //                                                      │  SHIFT          │  SPACE          │   │  SPACE          │  SHIFT          │
                                                                   &kp LSHFT         &lt 2 SPACE           &lt 1 SPACE       &kp RSHFT
@@ -73,14 +73,14 @@
         symbols_layer {
             bindings = <
         //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮   ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-        //│  TAB            │  @              │  {              │  }              │                 │   │                 │  `              │  \              │  _              │  DELETE         │
-            &kp TAB           &kp AT            &kp LBRC          &kp RBRC          &none                 &none             &kp GRAVE         &kp BSLH          &kp UNDER         &kp DEL
+        //│  TAB            │  @              │  {              │  }              │                 │   │                 │  ` ~            │  \              │  #              │  BSPC           │
+            &kp TAB           &kp AT            &kp LBRC          &kp RBRC          &none                 &none             &kp GRAVE         &kp BSLH          &kp HASH          &kp BSPC
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│  ESCAPE         │  #              │  (              │  )              │                 │   │                 │  '              │  |              │  &              │  $              │
-            &kp ESC           &hm LGUI HASH     &hm LALT LPAR     &hm LCTRL RPAR    &none                 &none             &hm RCTRL SQT     &hm RALT PIPE     &hm RGUI AMPS     &kp DLLR
+        //│  ESCAPE         │  _              │  (              │  )              │                 │   │                 │  '              │  |              │  &              │  ENTER          │
+            &kp ESC           &hm LGUI UNDER    &hm LALT LPAR     &hm LCTRL RPAR    &none                 &none             &hm RCTRL SQT     &hm RALT PIPE     &hm RGUI AMPS     &kp ENTER
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│                 │  ^              │  [              │  ]              │                 │   │                 │  "              │  !              │  ~              │                 │
-            &none             &kp CARET         &kp LBKT          &kp RBKT          &none                 &none             &kp DQT           &kp EXCL          &kp TILDE         &none
+        //│                 │  $              │  [              │  ]              │                 │   │                 │  "              │  !              │  ^              │                 │
+            &none             &kp DLLR          &kp LBKT          &kp RBKT          &none                 &none             &kp DQT           &kp EXCL          &kp CARET         &none
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
         //                                                      │  TRANSPARENT    │  TRANSPARENT    │   │  TRANSPARENT    │  TRANSPARENT    │
                                                                   &trans            &trans                &trans            &trans
@@ -91,11 +91,11 @@
         numbers_layer {
             bindings = <
         //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮   ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-        //│                 │  %              │  /              │  *              │                 │   │                 │  7              │  8              │  9              │  BSPC           │
-            &none             &kp PRCNT         &kp FSLH          &kp ASTRK         &none                 &none             &kp N7            &kp N8            &kp N9            &kp BSPC
+        //│  TAB            │  %              │  /              │  *              │                 │   │                 │  7              │  8              │  9              │  BSPC           │
+            &kp TAB           &kp PRCNT         &kp FSLH          &kp ASTRK         &none                 &none             &kp N7            &kp N8            &kp N9            &kp BSPC
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│                 │  -              │  +              │  =              │                 │   │                 │  4              │  5              │  6              │  ENTER          │
-            &none             &hm LGUI MINUS    &hm LALT PLUS     &hm LCTRL EQUAL   &none                 &none             &hm RCTRL N4      &hm RALT N5       &hm RGUI N6       &kp ENTER       
+        //│  ESCAPE         │  -              │  +              │  =              │                 │   │                 │  4              │  5              │  6              │  ENTER          │
+            &kp ESC           &hm LGUI MINUS    &hm LALT PLUS     &hm LCTRL EQUAL   &none                 &none             &hm RCTRL N4      &hm RALT N5       &hm RGUI N6       &kp ENTER
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
         //│                 │                 │                 │  0              │                 │   │                 │  1              │  2              │  3              │                 │
             &none             &none             &none             &kp N0            &none                 &none             &kp N1            &kp N2            &kp N3            &none
