@@ -11,7 +11,7 @@
 
 / {
     behaviors {
-          hm: homerow_mod {
+        hm: homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MOD";
             #binding-cells = <2>;
