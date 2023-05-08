@@ -56,8 +56,8 @@
         //│  Q              │  J              │  V              │  D              │  K              │   │  X              │  H              │  , <            │  . >            │  / ?            │
             &kp Q             &kp J             &kp V             &kp D             &kp K                 &kp X             &kp H             &kp COMMA         &kp DOT           &kp FSLH
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
-        //                                                      │  SHIFT          │  SPACE          │   │  LAYER 1        │  REPEAT         │
-                                                                  &sk LSHFT         &lt 2 SPACE           &sl 1             &key_repeat
+        //                                                      │  LAYER 2        │  SPACE          │   │  LAYER 1        │  SHIFT          │
+                                                                  &sl 2             &kp SPACE             &sl 1             &sk RSHFT
         //                                                      ╰─────────────────┴─────────────────╯   ╰─────────────────┴─────────────────╯
             >;
         };
@@ -74,8 +74,8 @@
         //│                 │  $              │  [              │  ]              │                 │   │                 │  "              │  !              │  ^              │                 │
             &none             &kp DLLR          &kp LBKT          &kp RBKT          &none                 &none             &kp DQT           &kp EXCL          &kp CARET         &none
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
-        //                                                      │  TRANSPARENT    │  LAYER 2        │   │  LAYER 3        │  TRANSPARENT    │
-                                                                  &trans            &sl 2                 &sl 3             &trans
+        //                                                      │  LAYER 3        │  SPACE          │   │  TRANSPARENT    │  TRANSPARENT    │
+                                                                  &sl 3             &kp SPACE             &trans            &trans
         //                                                      ╰─────────────────┴─────────────────╯   ╰─────────────────┴─────────────────╯
             >;
         };
@@ -101,14 +101,14 @@
         tri_layer {
             bindings = <
         //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮   ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-        //│  BOOTLOADER     │                 │                 │                 │                 │   │  HOME           │  PG DOWN        │  PG UP          │  END            │  BT 1           │
-            &td_bootloader    &none             &none             &none             &none                 &kp HOME          &kp PG_DN         &kp PG_UP         &kp END           &bt BT_SEL 0
+        //│  TAB            │                 │                 │                 │  BOOTLOADER     │   │  HOME           │  PG DOWN        │  PG UP          │  END            │  BSPC           │
+            &kp TAB           &none             &none             &none             &td_bootloader        &kp HOME          &kp PG_DN         &kp PG_UP         &kp END           &kp BSPC
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│                 │                 │                 │                 │                 │   │  LEFT           │  DOWN           │  UP             │  RIGHT          │                 │
-            &none             &none             &none             &none             &none                 &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &none
+        //│  ESCAPE         │                 │                 │                 │                 │   │  LEFT           │  DOWN           │  UP             │  RIGHT          │  ENTER          │
+            &kp ESC           &none             &none             &none             &none                 &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp ENTER
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│  RESET          │                 │                 │                 │                 │   │                 │                 │                 │                 │ BT CLEAR        │
-            &td_reset         &none             &none             &none             &none                 &none             &none             &none             &none             &td_bt_clear
+        //│                 │                 │                 │                 │  RESET          │   │                 │                 │                 │                 │                 │
+            &none             &none             &none             &none             &td_reset             &none             &none             &none             &none             &none
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
         //                                                      │  TRANSPARENT    │  TRANSPARENT    │   │  TRANSPARENT    │  TRANSPARENT    │
                                                                   &trans            &trans                &trans            &trans
