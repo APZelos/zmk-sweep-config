@@ -21,6 +21,60 @@
             bindings = <&kp>, <&kp>;
         };
 
+        hm_r: homerow_mod_r {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_R";
+            #binding-cells = <0>;
+            bindings = <&hm LGUI R>, <&kp R>;
+            mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+        };
+          
+        hm_s: homerow_mod_s {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_S";
+            #binding-cells = <0>;
+            bindings = <&hm LALT S>, <&kp S>;
+            mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+        };
+          
+        hm_t: homerow_mod_t {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_T";
+            #binding-cells = <0>;
+            bindings = <&hm LCTRL T>, <&kp T>;
+            mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+        };
+          
+        hm_n: homerow_mod_n {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_N";
+            #binding-cells = <0>;
+            bindings = <&hm RCTRL N>, <&kp N>;
+            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+        };
+          
+        hm_e: homerow_mod_e {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_E";
+            #binding-cells = <0>;
+            bindings = <&hm RALT E>, <&kp E>;
+            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+        };
+          
+        hm_i: homerow_mod_i {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_A";
+            #binding-cells = <0>;
+            bindings = <&hm RGUI I>, <&kp I>;
+            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+        };
+
         td_reset: tap_dance_reset {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RESET";
@@ -55,7 +109,7 @@
             &kp W             &kp L             &kp Y             &kp P             &kp B                 &kp Z             &kp F             &kp O             &kp U             &kp SEMI
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
         //│  C              │  R              │  S              │  T              │  G              │   │  M              │  N              │  E              │  I              │  A              │
-            &kp C             &hm LGUI R        &hm LALT S        &hm LCTRL T       &kp G                 &kp M             &hm RCTRL N       &hm RALT E        &hm RGUI I        &kp A
+            &kp C             &hm_r             &hm_s             &hm_t             &kp G                 &kp M             &hm_n             &hm_e             &hm_i             &kp A
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
         //│  Q              │  J              │  V              │  D              │  K              │   │  X              │  H              │  , <            │  . >            │  / ?            │
             &kp Q             &kp J             &kp V             &kp D             &kp K                 &kp X             &kp H             &kp COMMA         &kp DOT           &kp FSLH
