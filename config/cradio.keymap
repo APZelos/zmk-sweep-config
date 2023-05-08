@@ -26,8 +26,8 @@
             label = "HOMEROW_MOD_R";
             #binding-cells = <0>;
             bindings = <&hm LGUI R>, <&kp R>;
-            mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
-            keep-mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
           
         hm_s: homerow_mod_s {
@@ -35,8 +35,8 @@
             label = "HOMEROW_MOD_S";
             #binding-cells = <0>;
             bindings = <&hm LALT S>, <&kp S>;
-            mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
-            keep-mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
           
         hm_t: homerow_mod_t {
@@ -44,8 +44,8 @@
             label = "HOMEROW_MOD_T";
             #binding-cells = <0>;
             bindings = <&hm LCTRL T>, <&kp T>;
-            mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
-            keep-mods = <(MOD_RCTRL|MOD_RALT|MOD_RGUI)>;
+            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
           
         hm_n: homerow_mod_n {
@@ -53,8 +53,8 @@
             label = "HOMEROW_MOD_N";
             #binding-cells = <0>;
             bindings = <&hm RCTRL N>, <&kp N>;
-            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
-            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
         };
           
         hm_e: homerow_mod_e {
@@ -62,8 +62,8 @@
             label = "HOMEROW_MOD_E";
             #binding-cells = <0>;
             bindings = <&hm RALT E>, <&kp E>;
-            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
-            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
         };
           
         hm_i: homerow_mod_i {
@@ -71,8 +71,8 @@
             label = "HOMEROW_MOD_A";
             #binding-cells = <0>;
             bindings = <&hm RGUI I>, <&kp I>;
-            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
-            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTRL)>;
+            mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
+            keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
         };
 
         td_reset: tap_dance_reset {
