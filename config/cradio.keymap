@@ -163,7 +163,7 @@
             &kp TAB           &none             &none             &none             &td_bootloader        &kp HOME          &kp PG_DN         &kp PG_UP         &kp END           &kp BSPC
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
         //│  ESCAPE         │                 │                 │                 │                 │   │  LEFT           │  DOWN           │  UP             │  RIGHT          │  ENTER          │
-            &kp ESC           &none             &none             &none             &none                 &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp ENTER
+            &kp ESC           &hm LGUI &none    &hm LALT &none    &hm LCTRL &none   &none                 &kp LEFT          &kp DOWN          &kp UP            &kp RIGHT         &kp ENTER
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
         //│                 │                 │                 │                 │  RESET          │   │                 │                 │                 │                 │                 │
             &none             &none             &none             &none             &td_reset             &none             &none             &none             &none             &none
