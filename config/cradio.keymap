@@ -21,20 +21,20 @@
             bindings = <&kp>, <&kp>;
         };
           
-        hm_s: homerow_mod_s {
-            compatible = "zmk,behavior-mod-morph";
-            label = "HOMEROW_MOD_S";
-            #binding-cells = <0>;
-            bindings = <&hm LALT S>, <&kp S>;
-            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-        };
-
         hm_d: homerow_mod_d {
             compatible = "zmk,behavior-mod-morph";
             label = "HOMEROW_MOD_D";
             #binding-cells = <0>;
-            bindings = <&hm LGUI D>, <&kp D>;
+            bindings = <&hm LALT D>, <&kp D>;
+            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        hm_s: homerow_mod_s {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_S";
+            #binding-cells = <0>;
+            bindings = <&hm LGUI S>, <&kp S>;
             mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
             keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
