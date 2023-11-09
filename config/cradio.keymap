@@ -20,15 +20,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-        hm_r: homerow_mod_r {
-            compatible = "zmk,behavior-mod-morph";
-            label = "HOMEROW_MOD_R";
-            #binding-cells = <0>;
-            bindings = <&hm LGUI R>, <&kp R>;
-            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-        };
           
         hm_s: homerow_mod_s {
             compatible = "zmk,behavior-mod-morph";
@@ -38,39 +29,48 @@
             mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
             keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
-          
-        hm_t: homerow_mod_t {
+
+        hm_d: homerow_mod_d {
             compatible = "zmk,behavior-mod-morph";
-            label = "HOMEROW_MOD_T";
+            label = "HOMEROW_MOD_D";
             #binding-cells = <0>;
-            bindings = <&hm LCTRL T>, <&kp T>;
+            bindings = <&hm LGUI D>, <&kp D>;
             mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
             keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
           
-        hm_n: homerow_mod_n {
+        hm_f: homerow_mod_f {
             compatible = "zmk,behavior-mod-morph";
-            label = "HOMEROW_MOD_N";
+            label = "HOMEROW_MOD_F";
             #binding-cells = <0>;
-            bindings = <&hm RCTRL N>, <&kp N>;
+            bindings = <&hm LCTRL F>, <&kp F>;
+            mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+            keep-mods = <(MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+          
+        hm_j: homerow_mod_j {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMEROW_MOD_J";
+            #binding-cells = <0>;
+            bindings = <&hm RCTRL J>, <&kp J>;
             mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
             keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
         };
           
-        hm_e: homerow_mod_e {
+        hm_k: homerow_mod_k {
             compatible = "zmk,behavior-mod-morph";
-            label = "HOMEROW_MOD_E";
+            label = "HOMEROW_MOD_K";
             #binding-cells = <0>;
-            bindings = <&hm RALT E>, <&kp E>;
+            bindings = <&hm RALT K>, <&kp K>;
             mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
             keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
         };
           
-        hm_i: homerow_mod_i {
+        hm_l: homerow_mod_l {
             compatible = "zmk,behavior-mod-morph";
-            label = "HOMEROW_MOD_A";
+            label = "HOMEROW_MOD_L";
             #binding-cells = <0>;
-            bindings = <&hm RGUI I>, <&kp I>;
+            bindings = <&hm RGUI L>, <&kp L>;
             mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
             keep-mods = <(MOD_LGUI|MOD_LALT|MOD_LCTL)>;
         };
@@ -105,14 +105,14 @@
         default_layer {
             bindings = <
         //╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮   ╭─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────╮
-        //│  W              │  L              │  Y              │  P              │  B              │   │  Z              │  F              │  O              │  U              │  ; :            │
-            &kp W             &kp L             &kp Y             &kp P             &kp B                 &kp Z             &kp F             &kp O             &kp U             &kp SEMI
+        //│  Q              │  W              │  E              │  R              │  T              │   │  Y              │  U              │  I              │  O              │  P              │
+            &kp Q             &kp W             &kp E             &kp R             &kp T                 &kp Y             &kp U             &kp I             &kp O             &kp P
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│  C              │  R              │  S              │  T              │  G              │   │  M              │  N              │  E              │  I              │  A              │
-            &kp C             &hm_r             &hm_s             &hm_t             &kp G                 &kp M             &hm_n             &hm_e             &hm_i             &kp A
+        //│  A              │  S              │  D              │  F              │  G              │   │  H              │  J              │  K              │  L              │  ; :            │
+            &kp A             &hm_s             &hm_d             &hm_f             &kp G                 &kp H             &hm_j             &hm_k             &hm_l             &kp SEMI
         //├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┤
-        //│  Q              │  J              │  V              │  D              │  K              │   │  X              │  H              │  , <            │  . >            │  / ?            │
-            &kp Q             &kp J             &kp V             &kp D             &kp K                 &kp X             &kp H             &kp COMMA         &kp DOT           &kp FSLH
+        //│  Z              │  X              │  C              │  V              │  B              │   │  N              │  M              │  , <            │  . >            │  / ?            │
+            &kp Z             &kp X             &kp C             &kp V             &kp B                 &kp N             &kp M             &kp COMMA         &kp DOT           &kp FSLH
         //╰─────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┤   ├─────────────────┼─────────────────┼─────────────────┴─────────────────┴─────────────────╯
         //                                                      │  LAYER 2        │  SPACE          │   │  LAYER 1        │  SHIFT          │
                                                                   &sl 2             &kp SPACE             &sl 1             &sk RSHFT
